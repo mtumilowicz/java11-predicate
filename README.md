@@ -1,5 +1,6 @@
 # java11-predicate
-The main goal of this project is to show Predicate Interface from Java 11.
+The main goal of this project is to show updated Predicate Interface 
+from Java 11.
 
 # overview
 * **and**: returns a composed predicate that represents a short-circuiting 

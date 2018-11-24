@@ -91,6 +91,22 @@ public class PredicateTest {
         assertThat(filtered.get(0).value, is("test1"));
         
     }
+
+    @Test
+    public void composing_filter_cleanCode() {
+//        given
+        var xes = List.of(new X("test1"), new X("test2"), new X("test3"));
+
+//        when
+        var filtered = xes.stream()
+                .filter(X.byValue("test1").or(X.byValue("test2")))
+                .collect(Collectors.toList());
+
+//        then
+        assertThat(filtered, hasSize(2));
+        assertThat(filtered.get(0).value, is("test1"));
+        assertThat(filtered.get(1).value, is("test2"));
+    }
 }
 
 class X {

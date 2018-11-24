@@ -78,3 +78,9 @@ class X {
                 .filter(X.byValue("test1"))
                 .collect(Collectors.toList());        
         ```
+    1. easy to compose
+        ```
+        var filtered = xes.stream()
+                .filter(X.byValue("test1").or(X.byValue("test2")))
+                .collect(Collectors.toList());
+        ```

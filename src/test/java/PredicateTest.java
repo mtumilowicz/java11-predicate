@@ -2,15 +2,12 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by mtumilowicz on 2018-10-09.
@@ -109,15 +106,3 @@ public class PredicateTest {
     }
 }
 
-class X {
-    
-    String value;
-
-    X(String value) {
-        this.value = value;
-    }
-
-    static Predicate<X> byValue(String value) {
-        return x -> (null != x) && Objects.equals(x.value, value);
-    }
-}

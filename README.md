@@ -69,7 +69,7 @@ class X {
     1. define static method in X
         ```
         static Predicate<X> byValue(String value) {
-            return x -> (null != x) && Objects.equals(x.value, value);
+            return x -> nonNull(x) && Objects.equals(x.value, value);
         }    
         ```
     1. construct pipeline
